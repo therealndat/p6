@@ -1,0 +1,49 @@
+
+body {
+    background-color: #0d1117;
+    color: #c9d1d9;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 24px;
+    color: #f0f6fc;
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+img {
+    width: 200px;
+    height: auto;
+    border: 2px solid #30363d;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+img:hover {
+    transform: scale(1.05);
+}
+
+img:focus {
+    outline: 3px solid #2f81f7;
+}
+
+.preview {
+    margin-top: 20px;
+}
+
+#previewImage {
+    width: 400px;
+    height: auto;
+    border: 2px solid #30363d;
+    border-radius: 8px;
+}

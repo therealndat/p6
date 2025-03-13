@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Photo Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body onload="initializeGallery()">
+    <h1>Interactive Photo Gallery</h1>
+    <div class="gallery">
+        <img src="img/bacon_in_the_woods.png" alt="Bacon in the woods" tabindex="0">
+        <img src="img/blooming_trees.png" alt="Blooming tree" tabindex="0">
+        <img src="img/downed_tree.png" alt="Downed trees" tabindex="0">
+        <img src="img/mist_over_huron_river.jpg" alt="Mist over huron river" tabindex="0">
+        <img src="img/reflected_tree.jpg" alt="Reflected tree" tabindex="0">
+        <img src="img/tulips.png" alt="Tulips" tabindex="0">
+    </div>
+    <div class="preview">
+        <img id="previewImage" src="" alt="Image preview">
+    </div>
+
+    <script>
+        function initializeGallery() {
+            console.log("Gallery loaded");
+            let images = document.querySelectorAll('.gallery img');
+            let previewImage = document.getElementById('previewImage');
+
+            for (let img of images) {
+                img.addEventListener("mouseover", function() {
+                    this.style.border = "4px solid red";
+                    previewImage.src = this.src;
+                    console.log("Mouse over image");
+                });
+                img.addEventListener("mouseleave", function() {
+                    this.style.border = "2px solid black";
+                    previewImage.src = "";
+                    console.log("Mouse left image");
+                });
+                img.addEventListener("focus", function() {
+                    this.style.border = "4px solid green";
+                    console.log("Image focused");
+                });
+                img.addEventListener("blur", function() {
+                    this.style.border = "2px solid black";
+                    console.log("Image lost focus");
+                });
+            }
+        }
+    </script>
+</body>
+</html>
